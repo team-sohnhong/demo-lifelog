@@ -7,26 +7,26 @@ import { User, UserDocument } from 'src/schemas/user.schema';
 
 @Injectable()
 export class UsersService {
-  constructor(@InjectModel("User") private userModel: Model<UserDocument>){}
+  constructor(@InjectModel(User.name) private userModel: Model<UserDocument>){}
 
   async create(createUserDto: CreateUserDto): Promise<User> {
-    const createdBlogpost = new this.userModel(createUserDto);
-    return createdBlogpost.save();
+    const createdUser = new this.userModel(createUserDto);
+    return createdUser.save();
   }
 
   async findAll(): Promise<UserDocument[]> {
     return await this.userModel.find().exec();
   }
 
-  async findOne(id: string) {
-    return this.userModel.findOne({ id });
+  async findOne(id: number) {
+    return `This action returns a #${id} user`;
   }
 
-  async update(id: string, updateUserDto: UpdateUserDto) {
-    return this.userModel.updateOne( { id }, { $set: { ...updateUserDto }});
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    return `This action updates a #${id} user`;
   }
 
-  async remove(id: string) {
-    return this.userModel.remove({ id });
+  async remove(id: number) {
+    return `This action removes a #${id} user`;
   }
 }

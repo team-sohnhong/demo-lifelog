@@ -26,7 +26,7 @@ export class BlogpostsService {
     return this.blogpostModel.updateOne( { id }, { $set: { ...updateBlogpostDto }});
   }
 
-  async remove(id: string) {
+  async remove(id: number) {
     return this.blogpostModel.remove({ id });
   }
 }
