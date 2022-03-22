@@ -7,6 +7,12 @@ export type BlogpostDocument = Blogpost & Document;
 export class Blogpost {
     @Prop()
     id: string;
+
+    @Prop()
+    title: string;
+
+    @Prop()
+    content: string;
 }
 
 export const BlogpostSchema = SchemaFactory.createForClass(Blogpost);

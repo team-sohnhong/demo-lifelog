@@ -5,4 +5,10 @@ import { CreateBlogpostDto } from './create-blogpost.dto';
 export class UpdateBlogpostDto extends PartialType(CreateBlogpostDto) {
     @IsString()
     readonly id: string;
+
+    @IsString()
+    readonly title: string;
+
+    @IsString()
+    readonly content: string;
 }
