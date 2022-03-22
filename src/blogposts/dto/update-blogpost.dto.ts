@@ -7,6 +7,9 @@ export class UpdateBlogpostDto extends PartialType(CreateBlogpostDto) {
     readonly id: string;
 
     @IsString()
+    readonly owner: string;
+
+    @IsString()
     readonly title: string;
 
     @IsString()

@@ -9,6 +9,9 @@ export class Blogpost {
     id: string;
 
     @Prop()
+    owner: string;
+
+    @Prop()
     title: string;
 
     @Prop()
