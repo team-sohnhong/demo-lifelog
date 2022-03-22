@@ -21,6 +21,10 @@ export class UsersService {
   async findOne(id: string) {
     return this.userModel.findOne({ id });
   }
+  
+  async checkUser(address: string) {
+    return this.userModel.findOne({ 'addrress' : address });
+  }
 
   async update(id: string, updateUserDto: UpdateUserDto) {
     return this.userModel.updateOne( { id }, { $set: { ...updateUserDto }});
@@ -29,4 +33,7 @@ export class UsersService {
   async remove(id: string) {
     return this.userModel.remove({ id });
   }
+
+  
+
 }

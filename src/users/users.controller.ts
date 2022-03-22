@@ -22,6 +22,11 @@ export class UsersController {
     return this.usersService.findOne(id);
   }
 
+  @Get("check:userAddress")
+  checkUser(@Param('userAdress') userAddress: string) {
+    return this.usersService.checkUser(userAddress);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.update(id, updateUserDto);
