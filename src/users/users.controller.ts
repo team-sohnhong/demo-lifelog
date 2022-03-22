@@ -22,7 +22,7 @@ export class UsersController {
     return this.usersService.findOne(id);
   }
 
-  @Get("check:userAddress")
+  @Get("check/:userAddress")
   checkUser(@Param('userAdress') userAddress: string) {
     return this.usersService.checkUser(userAddress);
   }

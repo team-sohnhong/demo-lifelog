@@ -19,19 +19,19 @@ export class UsersService {
   }
 
   async findOne(id: string) {
-    return this.userModel.findOne({ id });
+    return await this.userModel.findOne({ id });
   }
-  
+
   async checkUser(address: string) {
-    return this.userModel.findOne({ 'addrress' : address });
+    return await this.userModel.findOne({ 'addrress' : address }).exec();
   }
 
   async update(id: string, updateUserDto: UpdateUserDto) {
-    return this.userModel.updateOne( { id }, { $set: { ...updateUserDto }});
+    return await this.userModel.updateOne( { id }, { $set: { ...updateUserDto }});
   }
 
   async remove(id: string) {
-    return this.userModel.remove({ id });
+    return await this.userModel.remove({ id });
   }
 
   
