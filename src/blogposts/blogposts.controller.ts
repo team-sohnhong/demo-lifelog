@@ -18,8 +18,8 @@ export class BlogpostsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.blogpostsService.findOne(id);
+  findById(@Param('id') id: string) {
+    return this.blogpostsService.findById(id);
   }
 
   @Patch(':id')
